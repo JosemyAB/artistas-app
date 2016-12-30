@@ -9,7 +9,6 @@
 
 <ul class="artistlist cf" *ngIf="consulta">
   <li class="artistlist-item cf" (click)="consulta=''" *ngFor="let item of (artistas)">
-    <!--<artist-item class="content" [artist]=item></artist-item>-->
-    {{item.name}}
+    <app-artista-component class="content" [artista]=item></app-artista-component>    
   </li>
 </ul>
