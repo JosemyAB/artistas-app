@@ -7,12 +7,11 @@
 </div>
 <!-- card search -->
 
-<ul class="artistlist cf" *ngIf="consulta">
+<ul class="artistlist cf" *ngIf="artistaActual == null || artistaActual == ''">
   <li class="artistlist-item cf" (click)="verArtista(item); consulta=''" *ngFor="let item of (artistas | busquedaArtista: consulta)">
     <app-artista-component class="content" [artista]=item></app-artista-component>
   </li>
-
 </ul>
 
-<app-artista-detalle *ngIf="artistaActual" [artista]="artistaActual">
+<app-artista-detalle *ngIf="artistaActual" [artista]="artistaActual">  
 </app-artista-detalle>

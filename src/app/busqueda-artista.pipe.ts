@@ -8,10 +8,15 @@ export class BusquedaArtistaPipe implements PipeTransform {
 
   transform(artistas: Artist[], consulta) {
 
-    return  artistas.filter((eachItem)=> {
-    return  eachItem['name'].toLowerCase().includes(consulta.toLowerCase()) ||
-            eachItem['reknown'].toLowerCase().includes(consulta.toLowerCase());
-    });
+    if (consulta != null){
+      return  artistas.filter((eachItem)=> {
+      return  eachItem['name'].toLowerCase().includes(consulta.toLowerCase()) ||
+              eachItem['reknown'].toLowerCase().includes(consulta.toLowerCase());
+      });  
+    }
+    else {
+      return artistas;
+    }
   }
 
 }
