@@ -8,7 +8,7 @@
 <!-- card search -->
 
 <ul class="artistlist cf" *ngIf="consulta">
-  <li class="artistlist-item cf" (click)="verArtista(item); consulta=''" *ngFor="let item of (artistas)">
+  <li class="artistlist-item cf" (click)="verArtista(item); consulta=''" *ngFor="let item of (artistas | busquedaArtista: consulta)">
     <app-artista-component class="content" [artista]=item></app-artista-component>
   </li>
 
