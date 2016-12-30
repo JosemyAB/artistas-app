@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ArtistaComponentComponent } from './artista-component/artista-component.component';
+import { ArtistaDetalleComponent } from './artista-detalle/artista-detalle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArtistaComponentComponent
+    ArtistaComponentComponent,
+    ArtistaDetalleComponent
   ],
   imports: [
     BrowserModule,

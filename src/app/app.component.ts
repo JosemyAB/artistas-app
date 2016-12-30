@@ -12,9 +12,22 @@ export class Artist {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   artistas = ARTISTS;
+  artistaActual: Artist;
+
+  verArtista(artistaSeleccionado) {
+    console.log(artistaSeleccionado);
+    this.artistaActual = artistaSeleccionado;
+  }
 }
+
+
+
+
+  
+
 
 var ARTISTS: Artist[] = [
   {

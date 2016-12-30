@@ -3,12 +3,16 @@
   <label class="search-label">Buscar
     <span *ngIf="consulta"
       [innerHTML]="' por: ' + consulta"></span></label>
-  <input class="search-input" [(ngModel)]="consulta" placeholder="Escribe un nombre">
+    <input (keyup)="artistaActual=''" class="search-input" [(ngModel)]="consulta" placeholder="Escribe un nombre" >
 </div>
 <!-- card search -->
 
 <ul class="artistlist cf" *ngIf="consulta">
-  <li class="artistlist-item cf" (click)="consulta=''" *ngFor="let item of (artistas)">
-    <app-artista-component class="content" [artista]=item></app-artista-component>    
+  <li class="artistlist-item cf" (click)="verArtista(item); consulta=''" *ngFor="let item of (artistas)">
+    <app-artista-component class="content" [artista]=item></app-artista-component>
   </li>
+
 </ul>
+
+<app-artista-detalle *ngIf="artistaActual" [artista]="artistaActual">
+</app-artista-detalle>
